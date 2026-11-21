@@ -1,0 +1,38 @@
+.inicio {
+  padding: 24px;
+}
+
+.inicio h1 {
+  margin: 0 0 16px;
+  font-size: 32px;
+  letter-spacing: normal;
+  overflow-wrap: anywhere;
+}
+
+.inicio a {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--accent);
+}
+
+.sessao {
+  max-width: 560px;
+  margin: 24px auto 0;
+  padding: 32px 20px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.sessao-tempo {
+  margin: 24px 0;
+  color: var(--text-h);
+  font-size: clamp(48px, 12vw, 80px);
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 600px) {
+  .inicio {
+    padding: 16px;
+  }
+}

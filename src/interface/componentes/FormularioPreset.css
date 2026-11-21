@@ -1,0 +1,60 @@
+.formulario-preset {
+  display: grid;
+  gap: 16px;
+}
+
+.formulario-preset-campo {
+  display: grid;
+  gap: 6px;
+}
+
+.formulario-preset-campo label {
+  color: var(--text-h);
+  font-weight: 600;
+}
+
+.formulario-preset-campo input {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text-h);
+  font: inherit;
+}
+
+.formulario-preset-campo input[aria-invalid="true"] {
+  border-color: #c43c3c;
+}
+
+.formulario-preset-erro {
+  margin: 0;
+  color: var(--text-h);
+  font-size: 14px;
+}
+
+.formulario-preset-acoes {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.formulario-preset-acoes button {
+  padding: 10px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text-h);
+  font: inherit;
+  cursor: pointer;
+}
+
+.formulario-preset-acoes button[type="submit"] {
+  background: var(--accent-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+}
