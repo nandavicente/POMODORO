@@ -1,17 +1,23 @@
-import {Route, Routes} from 'react-router-dom'
-import Inicio from './interface/paginas/Inicio'
-import Temporizadores from './interface/paginas/Temporizadores'
-import Cabecalho from './interface/componentes/Cabecalho'
+import { Route, Routes } from "react-router-dom";
+import Inicio from "./interface/paginas/Inicio";
+import Temporizadores from "./interface/paginas/Temporizadores";
+import Cabecalho from "./interface/componentes/Cabecalho";
+import AvisosGlobais from "./interface/componentes/AvisosGlobais";
+import { useApp } from "./interface/estado";
 
 export default function App() {
-  return(
+  const { sessaoInvalida } = useApp();
+  return (
     <>
-      <Cabecalho/>
+      <Cabecalho />
+      <AvisosGlobais />
 
-      <Routes>
-        <Route path = "/" element = {<Inicio />}/>
-        <Route path = "/temporizadores" element = {<Temporizadores/>}/>
-      </Routes>
+      {!sessaoInvalida && (
+        <Routes>
+          <Route path="/" element={<Inicio />} />
+          <Route path="/temporizadores" element={<Temporizadores />} />
+        </Routes>
+      )}
     </>
-  )
+  );
 }

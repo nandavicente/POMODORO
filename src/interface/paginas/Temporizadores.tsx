@@ -104,7 +104,7 @@ export default function Temporizadores() {
   }
 
   return (
-    <main>
+    <main className="temporizadores">
       <h1>Temporizadores</h1>
       <p>Organize suas configurações de foco e pausa</p>
 
@@ -123,6 +123,8 @@ export default function Temporizadores() {
         titulo={presetEmEdicao ? "Editar temporizador" : "Novo temporizador"}
         aoFechar={fecharModal}
       >
+        {erroOperacao && <p role="alert">{erroOperacao}</p>}
+
         {modalAberto && (
           <FormularioPreset
             key={presetEmEdicao?.id ?? "novo"} // faz o react criar um novo fomulario se mudar o item editado, isso vai evitar reaproveitar campos de outro preset
@@ -172,7 +174,7 @@ export default function Temporizadores() {
                     type="button"
                     disabled={emUso}
                     onClick={() => abrirEdicao(preset)}
-                    aria-label={"Editar temporizador ${preset.nome"}
+                    aria-label={'Editar temporizador ${preset.nome'}
                   >
                     Editar
                   </button>
