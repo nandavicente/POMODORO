@@ -2,6 +2,11 @@
   padding: 24px;
 }
 
+.inicio-principal {
+  max-width: 580px;
+  margin: 0 auto;
+}
+
 .inicio h1 {
   margin: 0 0 16px;
   font-size: 32px;
@@ -16,25 +21,77 @@
 }
 
 .sessao {
-  max-width: 560px;
   margin: 24px auto 0;
-  padding: 32px 20px;
+  padding: 28px 24px;
   border: 1px solid var(--border);
   border-radius: 16px;
 }
 
+.seletor-preset {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.seletor-preset label,
+.inicio-som label {
+  color: var(--text-h);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.seletor-preset select,
+.inicio-som select {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text-h);
+  font: inherit;
+  cursor: pointer;
+}
+
+.seletor-preset select:focus-visible,
+.inicio-som select:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.seletor-resumo,
+.seletor-nota {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.sessao-fase {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 16px;
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.sessao-ciclo {
+  margin-top: 10px;
+  font-size: 15px;
+}
+
 .sessao-tempo {
-  margin: 24px 0;
+  margin: 20px 0;
   color: var(--text-h);
   font-size: clamp(48px, 12vw, 80px);
-  line-height: 1.2;
+  line-height: 1.15;
   font-variant-numeric: tabular-nums;
 }
 
-@media (max-width: 600px) {
-  .inicio {
-    padding: 16px;
-  }
+.sessao-status {
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .sessao-controles {
@@ -55,8 +112,20 @@
   cursor: pointer;
 }
 
+.sessao-controles button.botao-primario {
+  border-color: var(--accent);
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-weight: 600;
+}
+
 .sessao-controles button:hover {
   background: var(--accent-bg);
+}
+
+.sessao-controles button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .sessao-controles button:focus-visible {
@@ -64,15 +133,16 @@
   outline-offset: 3px;
 }
 
-@media (max-width: 600px) {
-  .sessao-controles {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
+.inicio-som {
+  display: grid;
+  gap: 8px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  text-align: left;
 }
 
 .inicio-aviso {
-  max-width: 560px;
   box-sizing: border-box;
   margin: 24px auto;
   padding: 20px;
@@ -84,4 +154,29 @@
 
 .inicio-aviso h2 {
   margin-bottom: 12px;
+}
+
+.inicio-aviso-fase {
+  margin: 16px auto;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--code-bg);
+  color: var(--text-h);
+  font-size: 15px;
+}
+
+@media (max-width: 600px) {
+  .inicio {
+    padding: 16px;
+  }
+
+  .sessao {
+    padding: 20px 16px;
+  }
+
+  .sessao-controles {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }
