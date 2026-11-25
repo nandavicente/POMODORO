@@ -46,7 +46,9 @@
 }
 
 .modal-fechar:hover {
-  background: var(--accent-bg);
+  background-color: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
 }
 
 .modal :focus-visible {
@@ -56,4 +58,23 @@
 
 .modal-conteudo {
   overflow-wrap: anywhere;
+}
+
+.modal-fechar {
+  width: 44px;
+  height: 44px;
+}
+
+@media (max-width: 480px) {
+  .modal {
+    padding: 16px;
+  }
+
+  .modal-cabecalho {
+    gap: 8px;
+  }
+
+  .modal-cabecalho h2 {
+    font-size: 20px;
+  }
 }

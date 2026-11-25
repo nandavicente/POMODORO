@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import "./PainelTarefas.css";
 import { useApp } from "../estado";
 
 import {
@@ -72,11 +72,11 @@ export default function PainelTarefas() {
     setTarefaParaExcluir(null);
   }
     return (
-    <aside className="painel-tarefas">
+    <aside className="painel-tarefas" aria-labelledby="titulo-painel-tarefas">
 
       <div className="painel-tarefas-cabecalho">
 
-        <h2>Tarefas</h2>
+      <h2 id="titulo-painel-tarefas">Tarefas</h2>
 
         <button type="button" onClick={abrirNovaTarefa}>
           + Nova tarefa
@@ -102,20 +102,24 @@ export default function PainelTarefas() {
               <div className="tarefa-informacoes">
 
                 <span className={`tarefa-estado ${tarefa.estado}`}>
-                  {ROTULO_ESTADO[tarefa.estado]}</span>
+                  Estado: {ROTULO_ESTADO[tarefa.estado]}
+                </span>
 
                 <span className={`tarefa-prioridade ${tarefa.prioridade}`}>
-                  {ROTULO_PRIORIDADE[tarefa.prioridade]}</span>
+                  Prioridade: {ROTULO_PRIORIDADE[tarefa.prioridade]}
+                </span>
 
               </div>
 
               <div className="tarefa-acoes">
 
-                <button type="button" onClick={() => abrirEdicao(tarefa)}>
-                  Editar 
+                <button type="button" aria-label={`Editar tarefa: ${tarefa.titulo}`}
+                onClick={() => abrirEdicao(tarefa)}>
+                  Editar
                 </button>
 
-                <button type="button" onClick={() => solicitarExclusao(tarefa)}>
+                <button type="button" aria-label={`Excluir tarefa: ${tarefa.titulo}`}
+                onClick={() => solicitarExclusao(tarefa)}>
                   Excluir
                 </button>
 

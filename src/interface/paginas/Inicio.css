@@ -1,9 +1,17 @@
+/* Layout principal - Mobile First */
+
 .inicio {
-  padding: 24px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  gap: 24px;
+  padding: 16px;
 }
 
 .inicio-principal {
+  width: 100%;
   max-width: 580px;
+  min-width: 0;
   margin: 0 auto;
 }
 
@@ -110,6 +118,7 @@
   color: var(--text-h);
   font: inherit;
   cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
 }
 
 .sessao-controles button.botao-primario {
@@ -119,8 +128,10 @@
   font-weight: 600;
 }
 
-.sessao-controles button:hover {
-  background: var(--accent-bg);
+.sessao-controles button:not(:disabled):hover {
+  background-color: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
 }
 
 .sessao-controles button:disabled {
@@ -178,5 +189,56 @@
   .sessao-controles {
     display: grid;
     grid-template-columns: 1fr;
+  }
+}
+
+/* Botão gerenciar temporizadores */
+
+.inicio .botao-gerenciar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+  padding: 12px 20px;
+  min-height: 44px;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  background-color: var(--accent-bg);
+  color: var(--accent);
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.inicio .botao-gerenciar:hover {
+  background-color: var(--accent);
+  color: var(--bg);
+}
+
+.inicio .botao-gerenciar:active {
+  transform: scale(0.98);
+}
+
+.inicio .botao-gerenciar:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+
+/* Layout para computadores */
+
+@media (min-width: 1024px) {
+  .inicio {
+    grid-template-columns: minmax(0, 1fr)
+                           minmax(300px, 360px);
+    gap: 32px;
+    padding: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .inicio .botao-gerenciar {
+    width: 100%;
   }
 }

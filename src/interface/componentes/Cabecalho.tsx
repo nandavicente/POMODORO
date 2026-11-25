@@ -13,7 +13,7 @@ export default function Cabecalho() {
 
       <nav className="cabecalho-navegacao" aria-label="Navegação principal">
         <NavLink to="/" end>
-          Inicio
+          Início
         </NavLink>
 
         <NavLink to="/temporizadores">Temporizadores</NavLink>

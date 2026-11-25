@@ -20,10 +20,17 @@
   color: var(--text-h);
   font: inherit;
   cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
 }
 
 .confirmacao-acoes .confirmacao-confirmar {
   border-color: var(--accent);
   background: var(--accent-bg);
   color: var(--accent);
+}
+
+.confirmacao-acoes button:not(:disabled):hover {
+  background-color: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
 }
