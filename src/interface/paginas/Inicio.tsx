@@ -11,6 +11,7 @@ import Modal from "../componentes/Modal";
 import ModalConfirmacao from "../componentes/ModalConfirmacao";
 import { useApp } from "../estado";
 import "./Inicio.css";
+import PainelTarefas from "../componentes/PainelTarefas";
 
 const OPCOES_SOM: SomAmbiente[] = ["desligado", "chuva", "ruidoMarrom"];
 
@@ -160,6 +161,7 @@ export default function Inicio() {
             Gerenciar temporizadores
           </Link>
         </div>
+        <PainelTarefas />
       </main>
     );
   }
@@ -234,7 +236,7 @@ export default function Inicio() {
 
           <Link to="/temporizadores">Gerenciar temporizadores</Link>
         </div>
-
+        <PainelTarefas />
         <Modal
           aberto={modalNovoPreset}
           titulo="Novo temporizador"
@@ -376,7 +378,7 @@ export default function Inicio() {
 
         <Link to="/temporizadores">Gerenciar temporizadores</Link>
       </div>
-
+      <PainelTarefas />
       <ModalConfirmacao
         aberto={confirmacao !== null}
         titulo={mensagemAtual?.titulo ?? ""}
