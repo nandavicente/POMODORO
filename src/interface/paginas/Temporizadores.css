@@ -1,0 +1,96 @@
+.temporizadores {
+  padding: 24px;
+  text-align: left;
+}
+
+.temporizadores h1 {
+  margin: 0 0 12px;
+  font-size: 32px;
+  letter-spacing: normal;
+}
+
+.temporizadores-vazio {
+  margin-top: 24px;
+  padding: 32px 20px;
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.temporizadores-lista {
+  display: grid;
+  gap: 16px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.temporizador-card {
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.temporizador-titulo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.temporizador-titulo h2 {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.temporizador-status {
+  padding: 4px 10px;
+  border-radius: 16px;
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-size: 14px;
+}
+
+.temporizador-aviso {
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.temporizador-aviso a {
+  color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .temporizadores {
+    padding: 16px;
+  }
+}
+
+.temporizador-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.temporizador-acoes button {
+  padding: 10px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text-h);
+  font: inherit;
+  cursor: pointer;
+}
+
+.temporizador-acoes button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.temporizador-acoes button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}

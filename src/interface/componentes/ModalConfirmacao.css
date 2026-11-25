@@ -1,0 +1,29 @@
+.confirmacao-erro {
+  margin-top: 16px;
+  color: var(--text-h);
+  font-weight: 600;
+}
+
+.confirmacao-acoes {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.confirmacao-acoes button {
+  padding: 10px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text-h);
+  font: inherit;
+  cursor: pointer;
+}
+
+.confirmacao-acoes .confirmacao-confirmar {
+  border-color: var(--accent);
+  background: var(--accent-bg);
+  color: var(--accent);
+}
