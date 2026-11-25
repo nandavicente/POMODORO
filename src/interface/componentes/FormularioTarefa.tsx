@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
-
+import "./FormularioTarefa.css";
 import { TAREFA_PADRAO } from "../../dominio/tarefas";
 
 import {
@@ -70,11 +70,16 @@ export default function FormularioTarefa({
           onChange={(evento) => { setDados({...dados,
               titulo: evento.currentTarget.value });
           }}
+          aria-invalid={Boolean(erros.titulo)}
+          aria-describedby={
+          erros.titulo ? "tarefa-titulo-erro" : undefined
+          }
         />
 
         {erros.titulo && (
-          <p className="formulario-tarefa-erro" role="alert">
-            {erros.titulo} </p> )}
+        <p id="tarefa-titulo-erro"
+        className="formulario-tarefa-erro" role="alert">
+        {erros.titulo}</p>)}
 
       </div>
 
@@ -89,6 +94,10 @@ export default function FormularioTarefa({
           onChange={(evento) => { setDados({ ...dados,
               estado: evento.currentTarget.value as EstadoTarefa});
           }}
+          aria-invalid={Boolean(erros.estado)}
+          aria-describedby={
+          erros.estado ? "tarefa-estado-erro" : undefined
+          }
         >
           {ESTADOS.map((estado) => (
             <option key={estado} value={estado}>
@@ -96,7 +105,7 @@ export default function FormularioTarefa({
         </select>
 
         {erros.estado && (
-          <p className="formulario-tarefa-erro" role="alert">
+          <p className="formulario-tarefa-erro" role="alert" id="tarefa-estado-erro">
             {erros.estado}
           </p>
         )}
@@ -116,6 +125,10 @@ export default function FormularioTarefa({
           onChange={(evento) => { setDados({ ...dados,
               prioridade: evento.currentTarget.value as Prioridade});
           }}
+          aria-invalid={Boolean(erros.prioridade)}
+          aria-describedby={
+            erros.prioridade ? "tarefa-prioridade-erro" : undefined
+          }
         >
           {PRIORIDADES.map((prioridade) => (
             <option key={prioridade} value={prioridade}>
@@ -123,7 +136,7 @@ export default function FormularioTarefa({
         </select>
 
         {erros.prioridade && (
-          <p className="formulario-tarefa-erro" role="alert">
+          <p className="formulario-tarefa-erro" role="alert" id="tarefa-prioridade-erro">
             {erros.prioridade}</p> )}
 
       </div>

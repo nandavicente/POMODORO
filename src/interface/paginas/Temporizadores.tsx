@@ -108,7 +108,7 @@ export default function Temporizadores() {
       <h1>Temporizadores</h1>
       <p>Organize suas configurações de foco e pausa</p>
 
-      <button type="button" onClick={abrirNovo}>
+      <button type="button" onClick={abrirNovo}  className="botao-novo-temporizador">
         + Novo temporizador
       </button>
 
@@ -174,7 +174,7 @@ export default function Temporizadores() {
                     type="button"
                     disabled={emUso}
                     onClick={() => abrirEdicao(preset)}
-                    aria-label={'Editar temporizador ${preset.nome'}
+                    aria-label={`Editar temporizador ${preset.nome}`}
                   >
                     Editar
                   </button>

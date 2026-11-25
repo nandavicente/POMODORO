@@ -83,6 +83,7 @@
   color: var(--text-h);
   font: inherit;
   cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
 }
 
 .temporizador-acoes button:disabled {
@@ -93,4 +94,59 @@
 .temporizador-acoes button:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
+}
+
+.temporizador-acoes button:not(:disabled):hover {
+  background-color: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+
+@media (max-width: 480px) {
+  .temporizador-card {
+    padding: 16px;
+  }
+
+  .temporizador-acoes button {
+    flex: 1 1 100%;
+  }
+}
+
+/* Botão novo temporizador */
+
+.botao-novo-temporizador {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 12px 20px;
+  min-height: 44px;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  background-color: var(--accent-bg);
+  color: var(--accent);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.botao-novo-temporizador:hover {
+  background-color: var(--accent);
+  color: var(--bg);
+}
+
+.botao-novo-temporizador:active {
+  transform: scale(0.98);
+}
+
+.botao-novo-temporizador:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+  .botao-novo-temporizador {
+    width: 100%;
+  }
 }
