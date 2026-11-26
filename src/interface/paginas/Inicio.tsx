@@ -11,6 +11,7 @@ import Modal from "../componentes/Modal";
 import ModalConfirmacao from "../componentes/ModalConfirmacao";
 import { useApp } from "../estado";
 import "./Inicio.css";
+import PainelTarefas from "../componentes/PainelTarefas";
 
 const OPCOES_SOM: SomAmbiente[] = ["desligado", "chuva", "ruidoMarrom"];
 
@@ -150,7 +151,7 @@ export default function Inicio() {
                 </button>
               )}
 
-              <button type="button" onClick={fecharConclusao}>
+              <button type="button" onClick={fecharConclusao} className="botao-gerenciar">
                 Voltar ao início
               </button>
             </div>
@@ -160,6 +161,7 @@ export default function Inicio() {
             Gerenciar temporizadores
           </Link>
         </div>
+        <PainelTarefas />
       </main>
     );
   }
@@ -232,9 +234,9 @@ export default function Inicio() {
             </section>
           )}
 
-          <Link to="/temporizadores">Gerenciar temporizadores</Link>
+          <Link to="/temporizadores" className="botao-gerenciar">Gerenciar temporizadores</Link>
         </div>
-
+        <PainelTarefas />
         <Modal
           aberto={modalNovoPreset}
           titulo="Novo temporizador"
@@ -289,7 +291,7 @@ export default function Inicio() {
         )}
 
         {aviso && (
-          <p className="inicio-aviso-fase" role="status">
+          <p className="inicio-aviso-fase">
             {aviso}
           </p>
         )}
@@ -374,9 +376,11 @@ export default function Inicio() {
           {seletorSom}
         </section>
 
-        <Link to="/temporizadores">Gerenciar temporizadores</Link>
+        <Link to="/temporizadores" className="botao-gerenciar">
+          Gerenciar temporizadores
+        </Link>
       </div>
-
+      <PainelTarefas />
       <ModalConfirmacao
         aberto={confirmacao !== null}
         titulo={mensagemAtual?.titulo ?? ""}

@@ -1,0 +1,98 @@
+/* Formulário de tarefas */
+
+.formulario-tarefa {
+  display: grid;
+  gap: 16px;
+}
+
+.formulario-tarefa-campo {
+  display: grid;
+  gap: 6px;
+}
+
+.formulario-tarefa-campo label {
+  color: var(--text-h);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.formulario-tarefa-campo input,
+.formulario-tarefa-campo select {
+  width: 100%;
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background-color: var(--bg);
+  color: var(--text-h);
+  font: inherit;
+}
+
+.formulario-tarefa-campo input:hover,
+.formulario-tarefa-campo select:hover {
+  border-color: var(--accent);
+}
+
+.formulario-tarefa-campo select {
+  cursor: pointer;
+}
+
+/* Campos inválidos */
+
+.formulario-tarefa-campo input[aria-invalid="true"],
+.formulario-tarefa-campo select[aria-invalid="true"] {
+  border: 2px solid #dc2626;
+}
+
+.formulario-tarefa-erro {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+/* Botões do formulário */
+
+.formulario-tarefa-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.formulario-tarefa-acoes button {
+  flex: 1;
+  padding: 10px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background-color: var(--bg);
+  color: var(--text-h);
+}
+
+.formulario-tarefa-acoes button:hover {
+  background-color: var(--accent-bg);
+}
+
+.formulario-tarefa-acoes button[type="submit"] {
+  border-color: var(--accent);
+  background-color: var(--accent-bg);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.formulario-tarefa-acoes button[type="submit"]:hover {
+  background-color: var(--accent);
+  color: var(--bg);
+}
+
+/* Telas maiores */
+
+@media (min-width: 600px) {
+  .formulario-tarefa-acoes {
+    justify-content: flex-end;
+  }
+
+  .formulario-tarefa-acoes button {
+    flex: initial;
+  }
+}

@@ -51,10 +51,17 @@
   color: var(--text-h);
   font: inherit;
   cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
 }
 
 .formulario-preset-acoes button[type="submit"] {
   background: var(--accent-bg);
   border-color: var(--accent);
   color: var(--accent);
+}
+
+.formulario-preset-acoes button:not(:disabled):hover {
+  background-color: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
 }

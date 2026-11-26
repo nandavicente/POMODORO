@@ -58,3 +58,17 @@
     justify-content: center;
   }
 }
+
+.cabecalho {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--bg);
+}
+
+.cabecalho-navegacao a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+}
